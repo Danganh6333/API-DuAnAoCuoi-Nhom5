@@ -10,8 +10,12 @@ const congViecSchema = new db.mongoose.Schema(
       require: true,
       default:Date.now
     },
-    hanKetThuc: {
+    ngayKetThuc: {
       type: Date,
+      require: true,
+    },
+    tenCongViec: {
+      type: String,
       require: true,
     },
     trangThai: {

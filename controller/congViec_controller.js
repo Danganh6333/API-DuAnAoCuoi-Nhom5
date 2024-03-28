@@ -18,11 +18,12 @@ exports.addCongViec = async (req, res, next) => {
   try {
     await mongoose.connect(COMMON.uri);
 
-    const { idNhanVien, ngayBatDau, ngayKetThuc, trangThai, noiDungCongViec } =
+    const { idNhanVien, tenCongViec, ngayBatDau, ngayKetThuc, trangThai, noiDungCongViec } =
       req.body;
 
     const newCongViec = new CongViecModel({
       idNhanVien,
+      tenCongViec,
       ngayBatDau,
       ngayKetThuc,
       trangThai,
@@ -43,12 +44,12 @@ exports.updateCongViec = async (req, res, next) => {
     await mongoose.connect(COMMON.uri);
 
     const idCongViec = req.params.id;
-    const { idNhanVien, ngayBatDau, ngayKetThuc, trangThai, noiDungCongViec } =
+    const { idNhanVien, tenCongViec, ngayBatDau, ngayKetThuc, trangThai, noiDungCongViec } =
       req.body;
 
     const updatedCongViec = await CongViecModel.findByIdAndUpdate(
       idCongViec,
-      { idNhanVien, ngayBatDau, ngayKetThuc, trangThai, noiDungCongViec },
+      { idNhanVien, tenCongViec, ngayBatDau, ngayKetThuc, trangThai, noiDungCongViec },
       { new: true }
     );
 
