@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 exports.getListCongViec = async (req, res, next) => {
   try {
     await mongoose.connect(COMMON.uri);
-    const congViec = await CongViecModel.find();
+    const congViec = await CongViecModel.find().populate("idNhanVien");
     console.log(congViec);
 
     res.status(200).json(congViec);

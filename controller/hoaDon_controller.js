@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 exports.getListHoaDon = async (req, res, next) => {
   try {
     await mongoose.connect(COMMON.uri);
-    const HoaDons = await HoaDonModel.find();
+    const HoaDons = await HoaDonModel.find().populate("idNhanVien").populate("idKhachHang");
     console.log(HoaDons);
     res.send(HoaDons);
   } catch (error) {
