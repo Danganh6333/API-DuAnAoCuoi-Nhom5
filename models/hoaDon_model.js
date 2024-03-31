@@ -9,10 +9,16 @@ const hoaDonSchema = new db.mongoose.Schema(
       type: db.mongoose.Schema.Types.ObjectId,
       ref: "KhachHangModel",
     },
+    idDichVus: [{
+      idDichVu: {
+        type: db.mongoose.Schema.Types.ObjectId,
+        ref: "DichVuModel",
+      }
+    }],
     ngayTao: {
       type: Date,
-      default:Date.now(),
-      require: true,
+      default: Date.now(),
+      required: true,
     },
     tongTien: {
       type: Number,
