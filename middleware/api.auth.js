@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken')
-const {userModel} = require('../models/nguoiDung_models');
+const {NhanVienModel} = require('../models/nhanVien_model');
 require('dotenv').config(); // su dung thu vien doc file env
 const chuoi_ky_tu_bi_mat = process.env.TOKEN_SEC_KEY;
 
@@ -20,7 +20,7 @@ const api_auth = async(req, res, next) => {
    try {
        const data = jwt.verify(token, chuoi_ky_tu_bi_mat)
        console.log(data);
-       const user = await userModel.findOne({ _id: data._id, token: token })
+       const user = await NhanVienModel.findOne({ _id: data._id, token: token })
        // cách khác: decode token ra sau đó tìm trong csdl có tồn tại user theo thông tin trong token hay không
 
 

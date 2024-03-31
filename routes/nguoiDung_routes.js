@@ -4,6 +4,4 @@ const apiCtrl = require("../controller/nguoidung_controller");
 router.post('/login', apiCtrl.doLogin);
 router.post('/reg', apiCtrl.doReg);
 router.get('/check/:email',apiCtrl.checkExistedUser);
-var mdw = require('../middleware/api.auth');
-router.get('/products', mdw.api_auth,  apiCtrl.DanhSach );
 module.exports = router;

@@ -4,23 +4,6 @@ const COMMON = require("../COMMON");
 console.log("API Router loaded");
 const db = require("../models/db");
 
-exports.DanhSach = async(req,res,next)=>{
-  try {
-    await db.mongoose.connect(COMMON.uri);
-    const users = await userModel.find();
-    console.log(users);
-    res.send(users);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({
-      status: 500,
-      messenger: "Lỗi Server",
-      data: [],
-    });
-  }
-
-}
-
 exports.checkExistedUser = async(req,res,next)=>{
   await db.mongoose.connect(COMMON.uri);
   try {
