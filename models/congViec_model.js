@@ -21,6 +21,7 @@ const congViecSchema = new db.mongoose.Schema(
     trangThai: {
       type: Number,
       require: true,
+      default:0
     },
     noiDungCongViec: {
       type: String,

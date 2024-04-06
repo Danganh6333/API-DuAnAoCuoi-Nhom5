@@ -13,7 +13,7 @@ const hoaDonSchema = new db.mongoose.Schema(
       idDichVu: {
         type: db.mongoose.Schema.Types.ObjectId,
         ref: "DichVuModel",
-      }
+      },
     }],
     ngayTao: {
       type: Date,

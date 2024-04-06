@@ -31,7 +31,7 @@ exports.addHoaDon = async (req, res, next) => {
         data: [],
       });
     }
-    
+
     const newHoaDon = new HoaDonModel({
       idNhanVien,
       idKhachHang,
@@ -128,7 +128,10 @@ exports.searchHoaDonTheoId = async (req, res, next) => {
     const { id } = req.params;
     const data = await HoaDonModel.findById(id)
       .populate("idNhanVien")
-      .populate("idKhachHang");
+      .populate("idKhachHang").populate({
+        path: "idDichVus",
+        populate: { path: "idDichVu" }
+      });;
     res.json({
       status: 200,
       messenger: "Thông tin hóa đơn",

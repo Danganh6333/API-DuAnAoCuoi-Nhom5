@@ -185,5 +185,19 @@ exports.updateNhanVien = async (req, res, next) => {
       data: [],
     });
   }
-  
 };
+exports.searchNhanVienById = async(req,res,next) =>{
+  await mongoose.connect(COMMON.uri);
+  try {
+    const { id } = req.params;
+    const data = await NhanVienModel.findById(id);
+    res.json({
+      status: 200,
+      messenger: "Thông tin nhân viên",
+      data: data,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
+

@@ -6,4 +6,5 @@ router.post("/addNhanVien", NhanVienControl.addNhanVien);
 router.put("/updateNhanVien/:id", NhanVienControl.updateNhanVien);
 router.delete("/deleteNhanVien/:id", NhanVienControl.deleteNhanVien);
 router.post("/doLogin", NhanVienControl.doLogin);
+router.get('/searchNhanVienById/:id',NhanVienControl.searchNhanVienById);
 module.exports = router;

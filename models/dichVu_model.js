@@ -8,8 +8,13 @@ const dichVuSchema = new db.mongoose.Schema({
         type: Number,
         require: true,
         default:1,
-    },moTa:{
+    },
+    moTa:{
         type: String,
+        require: true,
+    },
+    loaiDichVu:{
+        type: Number,
         require: true,
     },
     giaTien:{
