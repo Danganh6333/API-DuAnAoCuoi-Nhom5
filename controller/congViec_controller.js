@@ -88,3 +88,17 @@ exports.searchCongViecTheoId = async (req, res, next) => {
     console.log(error);
   }
 };
+
+exports.getListCongViecTheoNhanVien = async (req, res, next) => {
+  try {
+    await mongoose.connect(COMMON.uri);
+    const { idNhanVien } = req.query;
+    const filter = idNhanVien ? { idNhanVien } : {};
+    const congViec = await CongViecModel.find(filter).populate("idNhanVien");
+    res.status(200).json(congViec);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Lỗi khi lấy danh sách công việc" });
+  }
+};
+
