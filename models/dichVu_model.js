@@ -9,6 +9,9 @@ const dichVuSchema = new db.mongoose.Schema({
         require: true,
         default:1,
     },
+    anhDichVu:{
+        type:String
+    },
     moTa:{
         type: String,
         require: true,
