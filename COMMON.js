@@ -1,4 +1,4 @@
-const uri = "mongodb+srv://user1:admin@cluster0.mknqvl1.mongodb.net/DuAnXuong";
+const uri = "";
 
 module.exports = {
     uri: uri,
